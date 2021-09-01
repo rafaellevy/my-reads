@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import BookView from "./components/BookView";
+
+const bookData = [
+  {
+    cover: "https://pictures.abebooks.com/inventory/30329881180.jpg",
+    title: "Git for Dummies",
+    shortDescription:
+      "GitHub For Dummies is the next step on your journey as a developer.",
+  },
+  {
+    cover: "https://www.cl.cam.ac.uk/~rja14/Papers/SEv3-cover.jpg",
+    title: "Security Engineering",
+    shortDescription: "A Guide to Building Dependable Distributed Systems.",
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {bookData.map((book) => {
+        return <BookView {...book} />;
+      })}
     </div>
   );
 }

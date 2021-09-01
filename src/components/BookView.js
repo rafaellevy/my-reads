@@ -1,9 +1,9 @@
-function BookView() {
+function BookView({ cover, title, shortDescription }) {
   return (
     <div>
-      <img src="https://pictures.abebooks.com/inventory/30329881180.jpg" />
-      <h1>Git for Dummies</h1>
-      <p>GitHub For Dummies is the next step on your journey as a developer.</p>
+      <img src={cover} />
+      <h1>{title}</h1>
+      <p>{shortDescription}</p>
     </div>
   );
 }

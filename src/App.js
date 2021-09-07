@@ -1,25 +1,44 @@
 import BookView from "./components/BookView";
+import './App.css';
 
 const bookData = [
   {
     cover: "https://pictures.abebooks.com/inventory/30329881180.jpg",
     title: "Git for Dummies",
-    shortDescription:
-      "GitHub For Dummies is the next step on your journey as a developer.",
+    authors:
+      "For Dummies",
   },
   {
     cover: "https://www.cl.cam.ac.uk/~rja14/Papers/SEv3-cover.jpg",
     title: "Security Engineering",
-    shortDescription: "A Guide to Building Dependable Distributed Systems.",
+    authors: "Ross Anderson",
   },
 ];
 
 function App() {
   return (
-    <div>
-      {bookData.map((book) => {
-        return <BookView {...book} />;
-      })}
+    <div className="app" >
+      <div className="list-books">
+        <div className="list-books-title">
+          <h1>MyReads</h1>
+        </div>
+        <div className="list-books-content">
+          <div>
+            <div className="bookshelf">
+              <h2 className="bookshelf-title">Currently Reading</h2>
+              <div className="bookshelf-books">
+                <ol className="books-grid">
+                  {bookData.map((book) => {
+                    return (<li>
+                      <BookView {...book} />
+                    </li>);
+                  })}
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
